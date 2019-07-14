@@ -1,50 +1,41 @@
 <template>
   <div id="app">
     <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link :to="{ name: 'home' }">Home</router-link> |
+      <router-link :to="{ name: 'home', query: { test: 'xxx' }}">Home2</router-link> |
+      <router-link :to="{ name: 'about', params: { id: 1 } }">About</router-link>
     </div>
-    <router-view/> -->
-    <!-- <component :is="scene" data="sceneData" @changeScene="changeScene"></component> -->
-    <div class="container">
-      <component :is="scene" :data="sceneData" @updateData="setData" @changeScene="changeScene"></component>
-    </div>
+    <keep-alive>
+      <router-view/>
+    </keep-alive> -->
+    <data-template>
+      <template #header>
+        <div>
+          asdasd
+        </div>
+      </template>
+      <template #body>this is body</template>
+      <div>5555555</div>
+      <div>asdas</div>
+      asdasd
+    </data-template>
   </div>
 </template>
 
 <script>
-import Red from '@/components/Red.vue'
-import Step1 from '@/components/Step1.vue'
-import Step2 from '@/components/Step2.vue'
-import Step3 from '@/components/Step3.vue'
+import DataTemplate from '@/components/DataTemplate.vue'
+import axios from 'axios'
 
 export default {
   components: {
-    Red,
-    Step1,
-    Step2,
-    Step3
+    DataTemplate
   },
-  data () {
-    return {
-      scene: 'Step1',
-      sceneData: {
-        name: '',
-        lastName: '',
-        tel: '',
-        email: '',
-        address: ''
-      }
-    }
+  async created () {
+    let data = await axios.get('https://us-central1-cloud-fn-1c36b.cloudfunctions.net/getItems')
+
+    console.log(data)
   },
   methods: {
-    changeScene (newScene) {
-      console.log('--', this.sceneData)
-      this.scene = newScene
-    },
-    setData (data) {
-      this.sceneData[data.key] = data.value
-    }
   }
 }
 </script>

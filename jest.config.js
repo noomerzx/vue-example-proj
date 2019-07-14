@@ -26,5 +26,22 @@ module.exports = {
   watchPlugins: [
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname'
-  ]
+  ],
+  collectCoverageFrom: [
+    "src/**/*.{js,ts}",
+    "!src/router/**/*",
+    "!src/i18n.ts",
+    "!src/main.ts",
+    "!src/router/*",
+    "!src/models/**/*", // when API is stable must enable coverage src/models
+    "!src/utils/transform.ts", // when API is stable must enable coverage
+    "!src/store/*.js",
+    "!src/**/*.d.ts",
+    "!src/views/*.vue",
+    "!**/node_modules/**"
+  ],
+  collectCoverage: true,
+  coverageReporters: ['text', 'cobertura'],
+  coverageDirectory: 'test-reports/',
+  setupTestFrameworkScriptFile: '<rootDir>/tests/unit/setupTests.js'
 }
