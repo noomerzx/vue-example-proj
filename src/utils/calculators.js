@@ -7,3 +7,5 @@ export default {
     return num1 + num2
   }
 }
+
+// https://github.com/noomerzx/vue-example-proj.git

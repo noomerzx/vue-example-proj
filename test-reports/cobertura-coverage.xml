@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="20" lines-covered="7" line-rate="0.35" branches-valid="2" branches-covered="1" branch-rate="0.5" timestamp="1563096967972" complexity="0" version="0.1">
+<coverage lines-valid="20" lines-covered="7" line-rate="0.35" branches-valid="2" branches-covered="1" branch-rate="0.5" timestamp="1563097848399" complexity="0" version="0.1">
   <sources>
     <source>/Users/wisarut/Desktop/experimental_projects/vue-course/example</source>
   </sources>

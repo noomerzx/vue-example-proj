@@ -19,6 +19,6 @@ describe('Total', () => {
       ]
       calTotal(mockItems)
       // expect(result).toBe(800)
-      expect(calculator.plusNumber).toHaveBeenCalledTimes(1)
+      expect(calculator.plusNumber).toHaveBeenCalledTimes(mockItems.length)
   })
 })
